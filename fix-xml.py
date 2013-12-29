@@ -22,7 +22,8 @@ def clean_and_append_start_tag(start_tag, filename):
     for line in source:
       rObj = re.search(ctrlregex, line)
       counter += 1
-      print counter
+      if (counter % 10000) == 0:
+        print counter
       if rObj is not None:
         newLine = re.sub(ctrlregex, '', line)
         destination.write(newLine)
