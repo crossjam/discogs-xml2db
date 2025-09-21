@@ -7,7 +7,7 @@ from speedup import exporter
 from speedup.cli import cli
 
 
-SAMPLES_DIR = Path(__file__).parent / "samples" / "20170401" / "head50"
+SAMPLES_DIR = Path(__file__).parent / "samples"
 
 
 def test_discogs_export_creates_csvs(tmp_path):
