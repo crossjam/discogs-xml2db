@@ -1,0 +1,39 @@
+[project]
+name = "discogs-xml2db"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pymongo==3.*",
+    "pytest>=6",
+    "lxml>=4.9",
+    "click>=8.3.0",
+    "tqdm>=4.67.1",
+    "requests>=2.32.5",
+]
+
+[project.scripts]
+"discogs-export" = "speedup.cli:main"
+
+[tool.uv]
+package = true
+
+[tool.uv.build-backend]
+module-root = "."
+module-name = "speedup"
+source-include = [
+    "speedup/**",
+    "exporters/**",
+    "parsers/**",
+    "tools/**",
+    "discogsxml2db/**",
+    "discogsparser.py",
+    "model.py",
+    "main.py",
+    "xml_utils.py",
+]
+
+[build-system]
+requires = ["uv_build>=0.8.3,<0.9.0"]
+build-backend = "uv_build"
